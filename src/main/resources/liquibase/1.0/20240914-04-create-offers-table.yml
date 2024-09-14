@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20240914-04-create-offers-table
+      author: Kanan Orujov
+      changes:
+        - createTable:
+            tableName: offers
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: term
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: interest
+                  type: NUMERIC(16,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: monthly_payment
+                  type: NUMERIC(16,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: NUMERIC(16,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: accepted
+                  type: BOOL
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: now()
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  defaultValueComputed: now()
+              - column:
+                  name: credit_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_offers_credits
+                    references: credits(id)
