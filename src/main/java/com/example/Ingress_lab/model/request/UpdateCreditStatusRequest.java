@@ -4,6 +4,6 @@ import lombok.Getter;
 
 @Getter
 public class UpdateCreditStatusRequest {
-    private Long id;
+    private Long offerId;
     private String status;
 }

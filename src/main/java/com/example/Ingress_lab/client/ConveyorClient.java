@@ -1,10 +1,13 @@
 package com.example.Ingress_lab.client;
 
-import com.example.Ingress_lab.model.client.ConveyorRequest;
-import com.example.Ingress_lab.model.client.ConveyorResponse;
+import com.example.Ingress_lab.model.client.ConveyorRequestDto;
+import com.example.Ingress_lab.model.client.ConveyorResponseDto;
+import com.example.Ingress_lab.model.client.UpdateProductStatusDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -12,6 +15,9 @@ import java.util.List;
 public interface ConveyorClient {
 
     @PostMapping()
-    List<ConveyorResponse> getConveyorOffer(@RequestBody ConveyorRequest conveyorRequest);
+    List<ConveyorResponseDto> getConveyorOffer(@RequestBody ConveyorRequestDto conveyorRequestDto);
+
+    @PutMapping
+    void updateProductStatus(@RequestParam Long conveyorId, @RequestBody UpdateProductStatusDto updateProductStatusDto);
 
 }

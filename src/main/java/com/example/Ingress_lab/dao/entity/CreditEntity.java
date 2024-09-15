@@ -47,7 +47,6 @@ public class CreditEntity {
     private BigDecimal requestAmount;
     @Enumerated(STRING)
     private CreditStatus status;
-    private Long productId;
     private Long conveyorId;
     private LocalDateTime checkDate;
     @ManyToOne(fetch = LAZY)

@@ -38,6 +38,10 @@ dependencies {
 	//feign
 	implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
 
+	//shedlock
+	implementation "net.javacrumbs.shedlock:shedlock-spring:${shedlockVersion}"
+	implementation "net.javacrumbs.shedlock:shedlock-provider-jdbc-template:${shedlockVersion}"
+
 	//db
 	runtimeOnly 'org.postgresql:postgresql'
 

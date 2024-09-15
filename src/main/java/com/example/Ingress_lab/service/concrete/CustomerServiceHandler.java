@@ -22,17 +22,19 @@ public class CustomerServiceHandler implements CustomerService {
 
     @Override
     public CustomerResponse getCustomerByPin(String pin) {
-        log.info("ActionLog.getCustomerByPin pin:{}", pin);
+        log.info("ActionLog.getCustomerByPin pin: {}", pin);
         var customer = customerRepository
                 .getCustomerEntityByPin(pin)
                 .orElseThrow(() -> new NotFoundException(CUSTOMER_NOT_FOUND.getCode(), CUSTOMER_NOT_FOUND.getMessage()));
+        log.info("ActionLog.getCustomerByPin customer: {}", customer);
         return toCustomerResponse(customer);
     }
 
     @Override
     public void createCustomer(CustomerRequest customerRequest) {
-        log.info("ActionLog.createCustomer customerRequest:{}", customerRequest);
+        log.info("ActionLog.createCustomer customerRequest: {}", customerRequest);
         customerRepository.save(toCustomerEntity(customerRequest));
+        log.info("ActionLog.createCustomer end");
     }
 
 }

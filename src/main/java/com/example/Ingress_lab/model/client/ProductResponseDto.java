@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Getter
 @ToString
-public class ProductResponse {
+public class ProductResponseDto {
     private BigDecimal amount;
     private BigDecimal monthlyPayment;
     private BigDecimal interest;

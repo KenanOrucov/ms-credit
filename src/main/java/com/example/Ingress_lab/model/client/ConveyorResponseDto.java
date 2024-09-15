@@ -9,9 +9,9 @@ import java.util.List;
 
 @Getter
 @ToString(exclude = "products")
-public class ConveyorResponse {
+public class ConveyorResponseDto {
     private Long conveyorId;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime checkDate;
-    private List<ProductResponse> products;
+    private List<ProductResponseDto> products;
 }

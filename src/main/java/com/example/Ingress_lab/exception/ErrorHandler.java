@@ -35,9 +35,9 @@ public class ErrorHandler {
         return new ErrorResponse(ex.getCode(), ex.getMessage());
     }
 
-    @ExceptionHandler(GuideBusyException.class)
+    @ExceptionHandler(CreditException.class)
     @ResponseStatus(NOT_ACCEPTABLE)
-    public ErrorResponse handle(GuideBusyException ex){
+    public ErrorResponse handle(CreditException ex){
         log.error("GuideBusyException {}", ex);
         return new ErrorResponse(ex.getCode(), ex.getMessage());
     }

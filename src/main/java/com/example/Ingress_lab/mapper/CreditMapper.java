@@ -6,6 +6,7 @@ import com.example.Ingress_lab.model.response.CreditResponse;
 
 import java.util.HashSet;
 
+import static com.example.Ingress_lab.mapper.StatusHistoryMapper.toStatusHistoryResponses;
 import static com.example.Ingress_lab.model.enums.CreditStatus.DRAFT;
 
 public enum CreditMapper {
@@ -20,9 +21,7 @@ public enum CreditMapper {
                 .requestAmount(creditRequest.getRequestAmount())
                 .checkDate(creditRequest.getCheckDate())
                 .conveyorId(creditRequest.getConveyorId())
-                .productId(creditRequest.getProductId())
                 .status(DRAFT)
-                .statusHistories(new HashSet<>())
                 .build();
     }
 
@@ -35,9 +34,9 @@ public enum CreditMapper {
                 .amount(creditEntity.getAmount())
                 .requestAmount(creditEntity.getRequestAmount())
                 .checkDate(creditEntity.getCheckDate())
-                .productId(creditEntity.getProductId())
                 .conveyorId(creditEntity.getConveyorId())
                 .status(creditEntity.getStatus())
+                .statusHistories(toStatusHistoryResponses(creditEntity.getStatusHistories()))
                 .build();
     }
 }

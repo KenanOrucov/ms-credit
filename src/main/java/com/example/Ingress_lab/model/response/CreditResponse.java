@@ -7,6 +7,7 @@ import lombok.Getter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Builder
@@ -19,7 +20,6 @@ public class CreditResponse {
     private BigDecimal requestAmount;
     private CreditStatus status;
     private LocalDateTime checkDate;
-    private Long productId;
     private Long conveyorId;
-    private List<StatusHistoryResponse> statusHistories;
+    private Set<StatusHistoryResponse> statusHistories;
 }

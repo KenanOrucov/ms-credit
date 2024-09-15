@@ -14,7 +14,6 @@ public class CreditRequest {
     private BigDecimal amount;
     private BigDecimal requestAmount;
     private LocalDateTime checkDate;
-    private Long productId;
     private Long conveyorId;
     private Long customerId;
 }

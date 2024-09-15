@@ -1,6 +1,6 @@
 package com.example.Ingress_lab.controller;
 
-import com.example.Ingress_lab.model.client.ConveyorRequest;
+import com.example.Ingress_lab.model.client.ConveyorRequestDto;
 import com.example.Ingress_lab.model.request.CreditRequest;
 import com.example.Ingress_lab.model.request.UpdateCreditStatusRequest;
 import com.example.Ingress_lab.model.response.CreditResponse;
@@ -31,14 +31,14 @@ public class CreditController {
     }
 
     @PostMapping("/feign")
-    public void saveCreditFeign(@RequestBody ConveyorRequest request) {
+    public void saveCreditFeign(@RequestBody ConveyorRequestDto request) {
         creditService.saveCreditFeign(request);
     }
 
 
-    @PutMapping
-    public void updateCreditStatus(@RequestBody UpdateCreditStatusRequest request) {
-        creditService.updateCreditStatus(request);
+    @PutMapping("/{id}")
+    public void updateCreditStatus(@PathVariable Long id, @RequestBody UpdateCreditStatusRequest request) {
+        creditService.updateCreditStatus(id,request);
     }
 
 

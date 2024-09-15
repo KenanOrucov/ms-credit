@@ -4,12 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class ConveyorRequest {
+public class ConveyorRequestDto {
     private Double amount;
     private Double monthlyPayment;
     private Double interest;

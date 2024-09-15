@@ -37,6 +37,7 @@ public class OffersEntity {
     private BigDecimal monthlyPayment;
     private BigDecimal amount;
     private Boolean accepted;
+    private Long productId;
     @ManyToOne(fetch = LAZY)
     private CreditEntity credit;
     @CreationTimestamp

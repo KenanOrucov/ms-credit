@@ -15,6 +15,7 @@ public class OffersResponse {
     private BigDecimal monthlyPayment;
     private BigDecimal amount;
     private Boolean accepted;
+    private Long productId;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
